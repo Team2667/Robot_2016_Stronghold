@@ -40,8 +40,8 @@ public class StartMotorsForward extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	time = System.currentTimeMillis() / 1000L;
-    	Robot.ballManipulator.driveMotor(0.2);
+    	time = System.nanoTime() / 1000000L;
+    	Robot.ballManipulator.driveMotor(0.75);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -50,7 +50,10 @@ public class StartMotorsForward extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return System.currentTimeMillis() / 1000L - time >= duration;
+    	if (duration == -1) {
+    		return false;
+    	}
+        return System.nanoTime()/ 1000000L - time >= duration;
     }
 
     // Called once after isFinished returns true

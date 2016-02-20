@@ -38,7 +38,7 @@ public class StartMotorsBackward extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.ballManipulator.driveMotor(-0.2);
+    	Robot.ballManipulator.driveMotor(-0.4);
     }
 
     // Called repeatedly when this Command is scheduled to run

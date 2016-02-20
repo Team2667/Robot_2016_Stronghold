@@ -40,16 +40,18 @@ public class Wait extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	time = System.currentTimeMillis() / 1000L;
+    	time = System.nanoTime() / 1000000L;
+    	//System.out.println("Starting timer..");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	//System.out.println(System.nanoTime() / 1000000L - time + " elapsed");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return System.currentTimeMillis() / 1000L - time >= m_delay;
+        return System.nanoTime() / 1000000L - time >= m_delay;
     }
 
     // Called once after isFinished returns true

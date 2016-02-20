@@ -45,6 +45,7 @@ public class Drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.driveTrain.arcadeDrive(Robot.oi.logitechController);
+    	///System.out.println("Drive train periodic");
     }
 
     // Make this return true when this Command no longer needs to run execute()
