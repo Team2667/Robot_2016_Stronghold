@@ -89,6 +89,14 @@ public class DriveTrain extends Subsystem {
     	getRobotDrive().mecanumDrive_Cartesian(controller.getX(), controller.getY(), controller.getZ(), gyroAngle);
     }
     
+    public void setMaxOutput(double maxOutput) {
+    	getRobotDrive().setMaxOutput(maxOutput);
+    }
+    
+    public void setSensitivity(double sensitivity) {
+    	getRobotDrive().setSensitivity(sensitivity);
+    }
+    
     public void stop() {
     	this.getRobotDrive().stopMotor();
     }

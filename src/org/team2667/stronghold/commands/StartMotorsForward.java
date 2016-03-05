@@ -41,7 +41,7 @@ public class StartMotorsForward extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	time = System.nanoTime() / 1000000L;
-    	Robot.ballManipulator.driveMotor(0.75);
+    	Robot.ballManipulator.driveMotor(0.8);
     }
 
     // Called repeatedly when this Command is scheduled to run

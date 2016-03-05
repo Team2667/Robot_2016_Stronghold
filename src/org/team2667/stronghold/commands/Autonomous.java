@@ -41,24 +41,26 @@ public class Autonomous extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	initialTime = System.nanoTime() / 1000000L;
-    	
-    	// Drive straight no gyro
-    	Robot.driveTrain.getRobotDrive().drive(0.4, 0);
+    	Robot.driveTrain.setMaxOutput(1.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+       	// Drive straight no gyro
+    	Robot.driveTrain.getRobotDrive().drive(0.7, 0.3);
+    	System.out.println(System.nanoTime() / 1000000 - initialTime);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	// Hard coded to run for 2 seconds
-        return System.nanoTime() / 1000000 - initialTime >= 2000L;
+        return System.nanoTime() / 1000000 - initialTime >= 10000L;
     }
 
     // Called once after isFinished returns true
     protected void end() {
     	Robot.driveTrain.stop();
+    	Robot.driveTrain.setMaxOutput(0.5);
     }
 
     // Called when another command which requires one or more of the same

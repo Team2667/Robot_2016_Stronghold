@@ -39,7 +39,7 @@ public class RaiseShooter extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.ballManipulator.fireSolenoids();
-    	System.out.println("Raising shooter.");
+    	//System.out.println("Raising shooter.");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -48,7 +48,7 @@ public class RaiseShooter extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true
