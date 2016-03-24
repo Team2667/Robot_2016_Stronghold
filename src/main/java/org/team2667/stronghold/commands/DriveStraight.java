@@ -12,6 +12,8 @@
 package org.team2667.stronghold.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.team2667.stronghold.Robot;
 
 /**
@@ -45,9 +47,10 @@ public class DriveStraight extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	double kP = 0.03;
-    	double moveValue = 0.4;
+    	double moveValue = 0.5;
     	double angle = initialAngle - Robot.driveTrain.getAngle();
-    	Robot.driveTrain.getRobotDrive().arcadeDrive(moveValue, -angle * kP, true);
+    	Robot.driveTrain.getRobotDrive().drive(-moveValue, angle * kP);
+    	SmartDashboard.putNumber("DriveStraight angle: ", angle * kP);
     }
 
     // Make this return true when this Command no longer needs to run execute()

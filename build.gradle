@@ -21,7 +21,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'GradleRIO'                                 //Apply the GradleRIO plugin
 
-gradlerio.robotClass = "org.team2667.stronghold"   //The class for the main Robot Class. Used in manifest
+gradlerio.robotClass = "org.team2667.stronghold.Robot"   //The class for the main Robot Class. Used in manifest
 gradlerio.team = "2667"                                   //Your FRC team number (e.g. 5333 for team 'Can't C#', or 47 for Chief Delphi)
 //gradlerio.rioIP = "10.53.33.20"                         //Uncomment to specify the IP address of the RIO
 
