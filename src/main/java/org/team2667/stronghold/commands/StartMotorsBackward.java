@@ -41,7 +41,7 @@ public class StartMotorsBackward extends Command {
     	// Either control via PID or manual
     	
     	//Robot.ballManipulator.driveMotor(-0.6);
-    	Robot.ballManipulator.setRPM(2000);
+    	Robot.ballManipulator.setRPM(-3500);
     }
 
     // Called repeatedly when this Command is scheduled to run

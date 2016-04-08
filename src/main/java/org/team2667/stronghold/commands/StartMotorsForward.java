@@ -43,7 +43,7 @@ public class StartMotorsForward extends Command {
     	time = System.nanoTime() / 1000000L;
     	// Control by either PID or manual
     	
-    	Robot.ballManipulator.setRPM(3000);
+    	Robot.ballManipulator.setRPM(4000);
     	//Robot.ballManipulator.driveMotor(0.8);
     }
 

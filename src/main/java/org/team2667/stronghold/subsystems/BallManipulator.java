@@ -15,7 +15,9 @@ import org.team2667.stronghold.RobotMap;
 import org.team2667.stronghold.commands.IdleRaisedShooter;
 
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.CANTalon.FeedbackDeviceStatus;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -65,7 +67,7 @@ public class BallManipulator extends Subsystem {
     	rightSideShooter.setF(F);
     	
     	// Todo: Figure out what these variables do
-    	// kek
+    	// jej
     	
     	leftSideShooter.setStatusFrameRateMs(CANTalon.StatusFrameRate.QuadEncoder, 10);
     	leftSideShooter.configEncoderCodesPerRev(1024);
@@ -76,6 +78,10 @@ public class BallManipulator extends Subsystem {
     	rightSideShooter.configEncoderCodesPerRev(1024);
     	rightSideShooter.reverseSensor(true);
     	rightSideShooter.setEncPosition(0);
+    	
+    	leftSideShooter.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+    	rightSideShooter.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+    	
     }
     
     // Moves the motors in the opposite direction
@@ -93,7 +99,7 @@ public class BallManipulator extends Subsystem {
     	rightSideShooter.changeControlMode(TalonControlMode.Speed);
     	
     	leftSideShooter.set(-speed);
-    	rightSideShooter.set(speed);
+    	rightSideShooter.set(speed);	
     }
     
     // Stop the motors
@@ -104,13 +110,14 @@ public class BallManipulator extends Subsystem {
     
     // Fire pusher
     public void fireSolenoids() {
-    	leftShooterSolenoid.set(true);
-    	rightShooterSolenoid.set(true);
+    	leftShooterSolenoid.set(false);
+    	rightShooterSolenoid.set(false);
     }
     
     // Retract pusher
     public void retractSolenoids() {
-    	leftShooterSolenoid.set(false);
+    	leftShooterSolenoid.set(true);
+    	rightShooterSolenoid.set(true);
     }
     
 }

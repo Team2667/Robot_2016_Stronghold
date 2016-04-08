@@ -62,7 +62,7 @@ public class DriveTrain extends Subsystem {
     
     // Compatibility with different motor controllers
     public boolean usingPWM() {
-    	return true;
+    	return false;
     }
     
     public SpeedController getLeftFront() {
@@ -109,7 +109,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public void arcadeDrive(GenericHID controller) {
-    	getRobotDrive().arcadeDrive(controller.getY(), controller.getX(), true);
+    	getRobotDrive().arcadeDrive(-controller.getY(), -controller.getX(), true);
     }
     
     public void mecanumDrive(GenericHID controller) {
@@ -130,6 +130,10 @@ public class DriveTrain extends Subsystem {
     
     public void stop() {
     	this.getRobotDrive().stopMotor();
+    }
+    
+    public double getDistanceToObstacle() {
+    	return RobotMap.rangeFinder.getAverageVoltage();
     }
     
 }
