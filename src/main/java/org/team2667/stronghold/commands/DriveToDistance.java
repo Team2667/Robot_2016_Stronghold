@@ -20,7 +20,6 @@ public class DriveToDistance extends Command {
 
 	@Override
 	protected void execute() {
-		SmartDashboard.putNumber("Average Voltage of Rangefinder", Robot.driveTrain.getDistanceToObstacle());
 		Robot.driveTrain.getRobotDrive().arcadeDrive(0.5, 0, true);
 	}
 

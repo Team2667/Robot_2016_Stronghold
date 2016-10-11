@@ -14,6 +14,7 @@ package org.team2667.stronghold;
 import org.team2667.stronghold.commands.Autonomous360NoScope;
 import org.team2667.stronghold.commands.AutonomousDoNothing;
 import org.team2667.stronghold.commands.AutonomousLowBar;
+import org.team2667.stronghold.commands.AutonomousMoat;
 import org.team2667.stronghold.commands.AutonomousRoughTerrain;
 import org.team2667.stronghold.commands.AutonomousRoughTerrainReverse;
 import org.team2667.stronghold.subsystems.BallManipulator;
@@ -103,10 +104,12 @@ public class Robot extends IterativeRobot {
 		
 		chooser = new SendableChooser();
 		chooser.addDefault("Low Bar", new AutonomousLowBar());
-		chooser.addObject("Rough Terrain", new AutonomousRoughTerrain());
+		chooser.addObject("Rough Terrain 80% @ 4s", new AutonomousRoughTerrain());
 		
-		chooser.addDefault("Rough Terrain Reverse", new AutonomousRoughTerrainReverse());
-		chooser.addDefault("360 No-Scope", new Autonomous360NoScope());
+		chooser.addObject("Rough Terrain Reverse 80% @ 4sec", new AutonomousRoughTerrainReverse());
+		chooser.addObject("Moat 80% @ 3.5s", new AutonomousMoat());
+		
+		chooser.addObject("360 No-Scope (For madmen)", new Autonomous360NoScope());
 		chooser.addObject("Do Nothing", new AutonomousDoNothing());
 		SmartDashboard.putData("Auto Mode", chooser);
 		
@@ -159,7 +162,7 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 		// SmartDashboard
 		SmartDashboard.putNumber("Gyro Angle", driveTrain.getAngle());
-		SmartDashboard.putNumber("Average Voltage of Rangefinder", Robot.driveTrain.getDistanceToObstacle());
+		SmartDashboard.putNumber("Range Finder", Robot.driveTrain.getDistanceToObstacle());
 	}
 
 	/**

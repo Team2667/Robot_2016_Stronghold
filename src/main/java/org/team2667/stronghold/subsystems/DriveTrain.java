@@ -133,7 +133,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public double getDistanceToObstacle() {
-    	return RobotMap.rangeFinder.getAverageVoltage();
+    	return RobotMap.rangeFinder.getVoltage() * 10;
     }
     
 }

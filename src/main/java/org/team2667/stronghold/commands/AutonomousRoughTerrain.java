@@ -7,7 +7,7 @@ public class AutonomousRoughTerrain extends CommandGroup {
 	public AutonomousRoughTerrain() 
 	{
 		addParallel(new RaiseShooter());
-		addSequential(new DriveStraight(1.0, 2000L));
+		addSequential(new DriveStraight(1.0, 4000L));
 	}
 
 }
